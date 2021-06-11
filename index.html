@@ -4,33 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-
 <body>
-    <div class="graph__box">
-        <div class="graph__name">График доходности торговой системы...</div> 
-        <div class="box">
-            <canvas id="c1" width="534" height="266"></canvas>
-            <div class="graph-result"></div>
-            <div class="graph-crossroad">
-                <div class="graph-dott"></div>
-            </div>
-        </div>
-        <!-- <div class="graph__axis-y">
-            <span>30%</span>
-            <span>20%</span>
-            <span>10%</span>
-        </div>
-        <div class="graph__axis-x">
-            <span>1 кв.</span>
-            <span>2 кв.</span>
-            <span>3 кв.</span>
-            <span>4 кв.</span>
-        </div> -->
-    </div>
+    <canvas id="myChart" width="534" height="266"></canvas>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script> -->
     <script src="script.js"></script>
 </body>
 </html>
