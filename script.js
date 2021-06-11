@@ -12,34 +12,34 @@ blue_gray_gradient.addColorStop(.2, '#395B89');
 blue_gray_gradient.addColorStop(1, '#F2F4F6');
 
 
-var customTooltips = function (tooltip) {
-			$(this._chart.canvas).css("cursor", "pointer");
+// var customTooltips = function (tooltip) {
+// 			$(this._chart.canvas).css("cursor", "pointer");
 
-			var positionY = this._chart.canvas.offsetTop;
-			var positionX = this._chart.canvas.offsetLeft;
+// 			var positionY = this._chart.canvas.offsetTop;
+// 			var positionX = this._chart.canvas.offsetLeft;
 
-			$(".chartjs-tooltip").css({
-				opacity: 0,
-			});
+// 			$(".chartjs-tooltip").css({
+// 				opacity: 0,
+// 			});
 
-			if (!tooltip || !tooltip.opacity) {
-				return;
-			}
+// 			if (!tooltip || !tooltip.opacity) {
+// 				return;
+// 			}
 
-			if (tooltip.dataPoints.length > 0) {
-				tooltip.dataPoints.forEach(function (dataPoint) {
-					var content = [dataPoint.xLabel, dataPoint.yLabel].join(": ");
-					var $tooltip = $("#tooltip-" + dataPoint.datasetIndex);
+// 			if (tooltip.dataPoints.length > 0) {
+// 				tooltip.dataPoints.forEach(function (dataPoint) {
+// 					var content = [dataPoint.xLabel, dataPoint.yLabel].join(": ");
+// 					var $tooltip = $("#tooltip-" + dataPoint.datasetIndex);
 
-					$tooltip.html(content);
-					$tooltip.css({
-						opacity: 1,
-						top: positionY + dataPoint.y + "px",
-						left: positionX + dataPoint.x + "px",
-					});
-				});
-			}
-		};
+// 					$tooltip.html(content);
+// 					$tooltip.css({
+// 						opacity: 1,
+// 						top: positionY + dataPoint.y + "px",
+// 						left: positionX + dataPoint.x + "px",
+// 					});
+// 				});
+// 			}
+// 		};
 
 
 
@@ -71,24 +71,35 @@ const myChart = new Chart(graph01, {
         options: {
 
             plugins: {
-                tooltips: {
-                    position: 'nearest',
-                    mode: 'index',
-                    intersect: false,
-                    // yPadding: 10,
-                    // xPadding: 10,
-                    // caretSize: 8,
-                    // backgroundColor: 'rgba(72, 241, 12, 1)',
-                    // titleFontColor: window.chartColors.black,
-                    // bodyFontColor: window.chartColors.black,
-                    // borderColor: 'rgba(200,200,200,1)',
+                tooltip: {
+                    bodyFont: {
+                        size: 14,
+                        family: 'Arial',
+                    },
+                    // footerFont: {
+                        // weight: 'bold',
+                    // },
+                    bodyColor: '#ffffff',
+                    caretPadding: 30,
+                    // position: 'nearest',
+                    position: 'average',
+                    // mode: 'index',
+                    // intersect: false,
+                    padding: 10,
+                    cornerRadius: 4,
+                    // xPadding: 40,
+                    caretSize: 0,
+                    backgroundColor: '#424C57',
+                    // titleFontColor: '#f0dd00',
+                    // bodyFontColor: 'rgba(255, 255, 12, 1)',
+                    // borderColor: 'rgba(250,200,200,1)',
                     // borderWidth: 4,
-                    custom: customTooltips
+                    // custom: customTooltips
                 },
                 legend: {
                     labels: {
                         font: {
-                            size: 18
+                            size: 24
                         }
                     }
                 },
@@ -108,6 +119,7 @@ const myChart = new Chart(graph01, {
             interaction: {
                 intersect: false,
             }
+
         }
     }
 
